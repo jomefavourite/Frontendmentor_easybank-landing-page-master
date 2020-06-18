@@ -1,0 +1,147 @@
+$desktop: 768px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@include desktop {
+    .header {
+        &__desktopNav {
+            display: block;
+        }
+
+        .ham {
+            display: none;
+        }
+
+        &__nav {
+            button {
+                margin: 0;
+            }
+            z-index: 10;
+        }
+
+        .flex-two {
+            position: relative;
+            display: flex;
+            // width: 90%;
+            max-width: 1440px;
+            margin: 0 auto;
+
+            .bg {
+                order: 1;
+                width: 100%;
+            }
+
+            .bgintro {
+                // position: absolute;
+                // right: -190px;
+            }
+        }
+
+        button {
+            display: block;
+        }
+
+        // Header Content
+
+        .bgintro {
+            background: url('../images/bg-intro-desktop.svg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+
+            .mobile {
+                position: absolute;
+                width: 100%;
+                top: 55%;
+            }
+        }
+
+        .cont {
+            // width: 100%;
+            padding-left: 5%;
+            @media (min-width: 1440px) {
+                padding-left: 0;
+            }
+
+            h1,p {
+                text-align: left;
+                max-width: 500px;
+            }
+
+        }
+
+
+        .flex-two button {
+            margin: 0;
+        }
+
+        .header__nav .container button {
+            display: block;
+            a {
+                color: color(white);
+            }
+        }
+    }
+
+    .main {
+        z-index: -1;
+
+        &__heading  {
+            max-width: 650px;
+        }
+
+        .main__flex {
+            display: flex;
+
+            .main__content + .main__content {
+                margin-left: 10px;
+            }
+
+            .main__content {
+                .icon {
+                    margin: 0;
+                }
+
+            }
+        }
+
+    }
+
+    .article {
+
+        .card__flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .center {
+        text-align: left;
+    }
+
+    .footer .container {
+        display: flex;
+        justify-content: space-between;
+
+        .footer__one {
+            .icon--footer {
+                margin-top: 50%;
+            }
+        }
+
+        .footer__four {
+            button {
+                margin-right: 0;
+            }
+
+            a {
+                margin-top: 20%;
+            }
+        }
+        
+    }
+}
